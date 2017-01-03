@@ -11,8 +11,8 @@ yes_no = raw_input()
 if yes_no == str("no"):
   exit()
 else:
-  blk_list = subprocess.check_output ("flood ls -V fio_test -hil", shell=True)
-  blk_uid = subprocess.check_output ("flood ls -V fio_test -hil | awk '{print $5}'", shell=True)
+  blk_list = subprocess.Popen("flood ls -V fio_test -hil", shell=True)
+  blk_uid = subprocess.Popen("flood ls -V fio_test -hil | awk '{print $5}'", shell=True)
 
   print(blk_list)
   print(blk_uid)
